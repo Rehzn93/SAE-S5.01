@@ -105,38 +105,3 @@ def get_vehicule_by_id(vehicule_id: int):
         return jsonify({"error": f"Véhicule avec l'id {vehicule_id} introuvable."}), 404
 
     return jsonify(vehicule), 200
-
-
-@vehicule_bp.route("/recommandations", methods=["POST"])
-def get_recommandations():
-    """
-    Retourne une liste de véhicules recommandés
-    ---
-    tags:
-      - Recommandations
-    parameters:
-      - name: body
-        in: body
-        required: true
-        schema:
-          type: object
-          properties:
-            ids:
-              type: array
-              items:
-                type: integer
-              example: [481, 550]
-    responses:
-      200:
-        description: Liste ordonnée des véhicules recommandés
-    """
-    payload = request.get_json(silent=True) or {}
-    service = VehiculeService()
-
-    ids_recommandes = payload.get("ids", [])
-
-    vehicules = service.getVehiculesByIds(ids_recommandes)
-    return jsonify({
-        "count": len(vehicules),
-        "recommandations": vehicules
-    }), 200

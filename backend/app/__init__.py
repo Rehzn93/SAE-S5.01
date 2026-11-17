@@ -17,8 +17,9 @@ def create_app() :
 
     Swagger(app)
 
-    from app.blueprints import vehicule_bp
+    from app.blueprints import vehicule_bp, recommandation_bp
     app.register_blueprint(vehicule_bp)
+    app.register_blueprint(recommandation_bp)
     
     
     # Route de test basique pour vérifier que le serveur répond
