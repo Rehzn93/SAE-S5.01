@@ -1,0 +1,96 @@
+/* couleurs du logo */
+:root {
+  --noir: #141c1c;
+  --vert: #5fb0a1;
+  --vert-fonce: #2f7f6e;
+  --vert-clair: #e3f3ef;
+}
+
+body {
+  background: #f7faf9;
+  color: var(--noir);
+}
+
+/* boutons et éléments Bootstrap aux couleurs du logo */
+.btn-vert {
+  background-color: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+  color: white;
+}
+.btn-vert:hover {
+  background-color: var(--noir);
+  border-color: var(--noir);
+  color: white;
+}
+.btn-check:checked + .btn-outline-secondary {
+  background-color: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+  color: white;
+}
+.form-range::-webkit-slider-thumb {
+  background: var(--vert-fonce);
+}
+.form-range::-moz-range-thumb {
+  background: var(--vert-fonce);
+}
+.form-check-input:checked {
+  background-color: var(--vert-fonce);
+  border-color: var(--vert-fonce);
+}
+.text-vert {
+  color: var(--vert-fonce);
+}
+
+/* barre de navigation */
+.barre-nav {
+  background: white;
+  border-bottom: 3px solid var(--vert);
+}
+.barre-nav img {
+  height: 40px;
+}
+
+/* page d'accueil */
+.logo-accueil {
+  max-width: 340px;
+  width: 100%;
+}
+.carte-choix {
+  text-decoration: none;
+  color: inherit;
+  border: 2px solid transparent;
+  transition: transform 0.15s;
+}
+.carte-choix:hover {
+  border-color: var(--vert);
+  transform: translateY(-3px);
+}
+.icone {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--vert-clair);
+  color: var(--vert-fonce);
+  font-size: 1.6rem;
+  text-align: center;
+  line-height: 56px;
+}
+
+/* choix multiples en forme de pastilles */
+.pastilles .btn {
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  margin: 0 0.3rem 0.4rem 0;
+}
+
+/* barre de score */
+.barre {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+}
+.barre div {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--vert);
+}
