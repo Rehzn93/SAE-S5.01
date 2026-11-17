@@ -1,3 +1,4 @@
+import os
 from flask import Flask 
 from flask_cors import CORS 
 from flasgger import Swagger
@@ -7,7 +8,10 @@ def create_app() :
 
     CORS(app)
 
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://user_sae:password_sae@localhost:5432/vehicules_db'
+    # en local : la base Docker est sur localhost ; dans Docker, DATABASE_URL pointe vers le service "db"
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get(
+        'DATABASE_URL', 'postgresql://user_sae:password_sae@localhost:5432/vehicules_db'
+    )
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SWAGGER'] = {
         'title': 'API Véhicules ADEME - SAE S5.01',

@@ -11,6 +11,33 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    # le back attend que PostgreSQL accepte les connexions avant de démarrer
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U user_sae -d vehicules_db"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  back:
+    build: ./backend
+    container_name: sae_cars_back
+    environment:
+      # dans Docker, la base s'appelle "db" (le nom du service), pas localhost
+      DATABASE_URL: postgresql://user_sae:password_sae@db:5432/vehicules_db
+      FLASK_HOST: 0.0.0.0
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  front:
+    build: ./frontend
+    container_name: sae_cars_front
+    ports:
+      - "5173:5173"
+    depends_on:
+      - back
 
 volumes:
   postgres_data:
