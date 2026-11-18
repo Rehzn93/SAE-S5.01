@@ -3,6 +3,10 @@
 Application web de recommandation de véhicules (données ADEME Car Labelling) :
 API Flask + PostgreSQL, interface Vue.js.
 
+## Dépôt GitHub
+
+[https://github.com/Rehzn93/SAE-S5.01](https://github.com/Rehzn93/SAE-S5.01)
+
 ## Lancer le projet avec Docker (recommandé)
 
 Prérequis : Docker Desktop ouvert.
