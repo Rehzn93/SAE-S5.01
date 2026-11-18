@@ -7,6 +7,17 @@ API Flask + PostgreSQL, interface Vue.js.
 
 [https://github.com/Rehzn93/SAE-S5.01](https://github.com/Rehzn93/SAE-S5.01)
 
+## Équipe
+
+| Membre | GitHub | Rôle |
+|---|---|---|
+| Rehan MOHAMMAD | [@Rehzn93](https://github.com/Rehzn93) | Backend / Data / Algorithmes / Docker |
+| Clarence EDOH-DAGNON | [@Clarinos](https://github.com/Clarinos) | Backend / Base de données / Docker |
+| Zoubida BENHABIB | [@zbd6](https://github.com/zbd6) | Backend / Data / Algorithmes |
+| Mohammed BEQQAL AZIRAR | [@Meyruem](https://github.com/Meyruem) | Frontend |
+| Adem BEN MAAMAR | [@Ademb29](https://github.com/Ademb29) | Frontend |
+
+
 ## Lancer le projet avec Docker (recommandé)
 
 Prérequis : Docker Desktop ouvert.
